@@ -1,1 +1,92 @@
 
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мария Кюри — жена, променила науката</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="poster">
+        <div class="top-line">
+            <span>НАУКА • ОТКРИТИЯ • ИСТОРИЯ</span>
+            <span>1867 — 1934</span>
+        </div>
+
+        <h1>МАРИЯ<br><span>КЮРИ</span></h1>
+
+        <p class="subtitle">
+            Жената, която промени представите ни за материята.
+        </p>
+
+        <div class="collage">
+            <div class="portrait">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c1920.jpg"
+                    alt="Портрет на Мария Кюри"
+                >
+            </div>
+
+            <div class="note note-one">
+                <span class="symbol">Po</span>
+                <p>Полоний</p>
+                <button data-fact="polonium">📄 Научи повече</button>
+            </div>
+
+            <div class="note note-two">
+                <span class="symbol">Ra</span>
+                <p>Радий</p>
+                <button data-fact="radium">📄 Научи повече</button>
+            </div>
+
+            <div class="stamp">2×<br>NOBEL</div>
+        </div>
+
+        <section class="quote">
+            <span class="quote-mark">“</span>
+            <p>
+                В живота няма от какво да се страхуваме,
+                има само неща, които трябва да разберем.
+            </p>
+            <small>— Мария Кюри</small>
+        </section>
+
+        <section class="timeline">
+            <h2>ПЪТЯТ НА ЕДИН УМ</h2>
+
+            <button class="year" data-fact="1903">
+                <strong>1903</strong>
+                <span>Нобелова награда по физика</span>
+                <b>＋</b>
+            </button>
+
+            <button class="year" data-fact="1911">
+                <strong>1911</strong>
+                <span>Нобелова награда по химия</span>
+                <b>＋</b>
+            </button>
+
+            <button class="year" data-fact="legacy">
+                <strong>1934</strong>
+                <span>Наследство, което продължава</span>
+                <b>＋</b>
+            </button>
+        </section>
+
+        <div class="fact-box" id="factBox" hidden>
+            <button id="closeFact" class="close" aria-label="Затвори">×</button>
+            <h3 id="factTitle"></h3>
+            <p id="factText"></p>
+        </div>
+
+        <footer>
+            <span>ЛЮБОПИТСТВОТО ПРОМЕНЯ СВЕТА</span>
+            <span>01 / НАУЧЕН ПОРТРЕТ</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
