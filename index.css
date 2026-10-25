@@ -192,7 +192,8 @@ h1 span {
 }
 
 .click-point button:hover,
-.click-point button:focus-visible {
+.click-point button:focus-visible,
+.click-point button.selected {
     background: var(--green);
     color: white;
     transform: scale(1.12);
@@ -282,90 +283,113 @@ footer {
     border-top: 1px solid var(--line);
 }
 
-/* Поп-ъп прозорец */
+/* ЛИСТЧЕТО ВЪРХУ ПЛАКАТА */
 
 .modal[hidden] {
-    display: none;
+    display: none !important;
 }
 
 .modal {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    z-index: 10;
-    display: grid;
-    place-items: center;
-    padding: 20px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    pointer-events: none;
 }
 
 .modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: #172124c9;
-    backdrop-filter: blur(4px);
+    display: none;
 }
 
 .modal-card {
     position: relative;
-    z-index: 1;
-    width: min(100%, 440px);
-    max-height: 85vh;
+    width: min(100%, 350px);
+    max-height: 85%;
     overflow-y: auto;
-    padding: 35px;
-    background: var(--paper);
+    padding: 28px 25px 24px;
+    background:
+        radial-gradient(ellipse at top right, #e5dfca 0, transparent 55%),
+        #fff8e8;
+    border: 1px solid #c7b99b;
     border-top: 5px solid var(--green);
-    box-shadow: 0 20px 60px #0004;
-    animation: reveal 0.25s ease;
+    box-shadow: 3px 8px 25px #20251e45;
+    transform: rotate(-1.5deg);
+    pointer-events: auto;
+    animation: paperAppear 0.22s ease-out;
+}
+
+.modal-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 22px;
+    width: 35px;
+    height: 8px;
+    background: #a55e4870;
 }
 
 .modal-close {
     position: absolute;
-    top: 8px;
-    right: 14px;
+    top: 7px;
+    right: 12px;
     border: none;
     background: transparent;
     color: var(--ink);
-    font-size: 32px;
+    font-size: 27px;
     cursor: pointer;
 }
 
-.modal-label {
+.modal-close:hover {
     color: var(--red);
-    font: 10px 'DM Mono', monospace;
-    letter-spacing: 2px;
+}
+
+.modal-label {
+    padding-right: 20px;
+    color: var(--red);
+    font: 9px 'DM Mono', monospace;
+    letter-spacing: 1.5px;
 }
 
 .modal-card h2 {
-    padding-right: 15px;
-    font: 700 32px 'Playfair Display', Georgia, serif;
+    margin: 18px 0 12px;
+    padding-right: 5px;
+    font: 700 27px/1.2 'Playfair Display', Georgia, serif;
 }
 
 .modal-divider {
-    width: 55px;
+    width: 45px;
     height: 3px;
-    margin: 18px 0;
+    margin: 15px 0;
     background: var(--green);
 }
 
 .modal-card #modalText {
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.75;
 }
 
 .modal-number {
     display: block;
-    margin-top: 25px;
+    margin-top: 22px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
     color: var(--green);
-    font: 11px 'DM Mono', monospace;
+    font: 9px 'DM Mono', monospace;
+    letter-spacing: 1px;
 }
 
-@keyframes reveal {
+@keyframes paperAppear {
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(10px) rotate(2deg) scale(0.96);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) rotate(-1.5deg) scale(1);
     }
 }
 
@@ -435,12 +459,21 @@ footer {
         font-size: 17px;
     }
 
+    .modal {
+        padding: 12px;
+    }
+
     .modal-card {
-        padding: 28px 23px;
+        width: min(100%, 310px);
+        padding: 25px 20px 20px;
     }
 
     .modal-card h2 {
-        font-size: 27px;
+        font-size: 24px;
+    }
+
+    .modal-card #modalText {
+        font-size: 14px;
     }
 }
 
