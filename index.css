@@ -1,306 +1,462 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap');
 
+:root {
+    --paper: #f4efdf;
+    --ink: #243236;
+    --green: #527a72;
+    --red: #a55e48;
+    --line: #c6bda8;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 35px 15px;
-    background: #d6d0c5;
-    color: #202d32;
+    padding: 30px 14px;
+    background: #d4cfc4;
+    color: var(--ink);
     font-family: Georgia, serif;
+}
+
+button {
+    font: inherit;
 }
 
 .poster {
     position: relative;
-    max-width: 720px;
+    max-width: 760px;
     margin: auto;
-    padding: 35px;
+    padding: clamp(20px, 5vw, 42px);
     overflow: hidden;
-    background: #f4efdf;
-    border: 1px solid #b8ad96;
+    background:
+        radial-gradient(ellipse at 85% 35%, #d8dfd1 0, transparent 36%),
+        var(--paper);
+    border: 1px solid #b9b09d;
     box-shadow: 0 15px 45px #0002;
 }
 
-.top-line,
+.header,
 footer {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 10px;
     font: 10px 'DM Mono', monospace;
     letter-spacing: 1px;
 }
 
-.top-line {
-    padding-bottom: 12px;
-    border-bottom: 1px solid #b8ad96;
+.header {
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--line);
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+    padding-top: 25px;
+}
+
+.eyebrow {
+    color: var(--red);
+    font: 11px 'DM Mono', monospace;
+    letter-spacing: 2px;
 }
 
 h1 {
-    margin: 25px 0 5px;
-    font: 800 clamp(55px, 12vw, 100px)/0.83
-          'Playfair Display', Georgia, serif;
+    margin: 17px 0 12px;
+    font: 800 clamp(64px, 12vw, 108px)/0.82
+        'Playfair Display', Georgia, serif;
     letter-spacing: -5px;
 }
 
 h1 span {
-    color: #537b78;
+    color: var(--green);
 }
 
 .subtitle {
-    max-width: 390px;
-    margin: 20px 0 25px;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 17px;
+    font-style: italic;
 }
 
 .collage {
     position: relative;
-    min-height: 340px;
-    margin: 15px 0 25px;
-    background: #dce1d5;
-    border: 1px solid #c4c8b9;
+    height: 430px;
+    margin: 30px 0;
+    background: #e0e4d8;
+    border: 1px solid #c6cbbd;
 }
 
-.portrait {
+.portrait-frame {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 50%;
-    width: 58%;
-    height: 300px;
-    transform: translateX(-50%) rotate(-2deg);
-    padding: 9px;
+    width: 48%;
+    height: 335px;
+    padding: 10px 10px 28px;
     background: #fffdf5;
-    box-shadow: 4px 7px 15px #0003;
+    box-shadow: 4px 7px 18px #0003;
+    transform: translateX(-50%) rotate(-2deg);
+    z-index: 1;
 }
 
-.portrait img {
+.portrait-frame img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 18%;
     filter: grayscale(100%) contrast(1.08);
 }
 
-.note {
+.photo-caption {
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font: 8px 'DM Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.paper-note {
     position: absolute;
     z-index: 2;
-    width: 145px;
-    padding: 12px;
-    background: #f5e7bd;
-    box-shadow: 2px 4px 10px #0002;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 112px;
+    padding: 13px 8px;
+    background: #f2e4bc;
+    box-shadow: 2px 5px 12px #0002;
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: 1px;
 }
 
-.note-one {
-    top: 30px;
-    left: 12px;
-    transform: rotate(-6deg);
+.note-left {
+    left: 4%;
+    top: 50px;
+    transform: rotate(-7deg);
 }
 
-.note-two {
-    right: 12px;
-    bottom: 25px;
-    transform: rotate(5deg);
+.note-right {
+    right: 4%;
+    bottom: 48px;
+    transform: rotate(6deg);
 }
 
-.symbol {
-    display: block;
+.element {
     font: 700 42px 'Playfair Display', Georgia, serif;
-    color: #537b78;
+    color: var(--green);
 }
 
-.note p {
-    margin: 0 0 8px;
-}
-
-button {
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.note button {
-    border: 0;
-    background: #202d32;
-    color: white;
-    padding: 7px 9px;
-    font-size: 11px;
-}
-
-.note button:hover,
-.note button:focus-visible {
-    background: #537b78;
-}
-
-.stamp {
+.orbit {
     position: absolute;
-    right: 18px;
-    top: 22px;
+    color: var(--red);
+    font-size: 43px;
+}
+
+.orbit-one {
+    top: 8px;
+    right: 25%;
+}
+
+.orbit-two {
+    bottom: 20px;
+    left: 23%;
+    font-size: 28px;
+}
+
+.click-point {
+    position: absolute;
     z-index: 3;
-    display: grid;
-    place-content: center;
-    width: 65px;
-    height: 65px;
-    border: 2px solid #a45d45;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.click-point button {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    border: 1px solid var(--green);
     border-radius: 50%;
-    color: #a45d45;
-    font: 700 13px 'DM Mono', monospace;
-    text-align: center;
-    transform: rotate(12deg);
+    background: var(--paper);
+    color: var(--ink);
+    font: 12px 'DM Mono', monospace;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.click-point button:hover,
+.click-point button:focus-visible {
+    background: var(--green);
+    color: white;
+    transform: scale(1.12);
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.click-point span {
+    font: 9px 'DM Mono', monospace;
+    letter-spacing: 1px;
+    background: var(--paper);
+    padding: 4px;
+}
+
+.point-1 {
+    top: 5%;
+    left: 4%;
+}
+
+.point-2 {
+    top: 42%;
+    left: 2%;
+}
+
+.point-3 {
+    bottom: 4%;
+    left: 4%;
+}
+
+.point-4 {
+    top: 7%;
+    right: 4%;
+}
+
+.point-5 {
+    top: 49%;
+    right: 2%;
+}
+
+.point-6 {
+    bottom: 4%;
+    right: 4%;
 }
 
 .quote {
     position: relative;
-    padding: 18px 25px;
-    border-left: 4px solid #537b78;
+    padding: 18px 24px;
     background: #e8e5d8;
+    border-left: 4px solid var(--green);
 }
 
-.quote-mark {
-    font-size: 42px;
-    color: #537b78;
+.quote-symbol {
+    color: var(--green);
+    font-size: 38px;
 }
 
 .quote p {
     margin: 0 0 12px;
-    font: 600 19px/1.5 'Playfair Display', Georgia, serif;
+    font: 600 20px/1.5 'Playfair Display', Georgia, serif;
 }
 
 .quote small {
-    color: #626a65;
+    color: #646b64;
+    font-size: 11px;
 }
 
-.timeline {
-    margin: 30px 0;
-}
-
-.timeline h2 {
-    margin-bottom: 15px;
-    font: 500 12px 'DM Mono', monospace;
-    letter-spacing: 2px;
-}
-
-.year {
-    display: grid;
-    grid-template-columns: 75px 1fr 20px;
+.instruction {
+    display: flex;
     align-items: center;
     gap: 10px;
-    width: 100%;
-    padding: 14px 4px;
-    text-align: left;
-    background: transparent;
-    border: 0;
-    border-top: 1px solid #b8ad96;
-    color: #202d32;
+    margin: 25px 0;
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: 1px;
 }
 
-.year strong {
-    font: 700 22px 'Playfair Display', Georgia, serif;
-    color: #537b78;
-}
-
-.year span {
-    font-size: 14px;
-}
-
-.year b {
-    font-size: 20px;
-}
-
-.year:hover {
-    background: #e8e5d8;
-}
-
-.fact-box {
-    position: relative;
-    padding: 25px;
-    margin: 20px 0;
-    background: #202d32;
-    color: #f4efdf;
-    border-bottom: 5px solid #537b78;
-    animation: appear 0.25s ease;
-}
-
-.fact-box h3 {
-    margin-top: 0;
-    font: 700 25px 'Playfair Display', Georgia, serif;
-}
-
-.fact-box p {
-    line-height: 1.7;
-}
-
-.close {
-    position: absolute;
-    right: 12px;
-    top: 8px;
-    border: 0;
-    background: transparent;
-    color: white;
-    font-size: 28px;
+.pulse {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 5px #a55e481c;
 }
 
 footer {
     padding-top: 15px;
-    border-top: 1px solid #b8ad96;
+    border-top: 1px solid var(--line);
 }
 
-@keyframes appear {
+/* Поп-ъп прозорец */
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: #172124c9;
+    backdrop-filter: blur(4px);
+}
+
+.modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 440px);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    background: var(--paper);
+    border-top: 5px solid var(--green);
+    box-shadow: 0 20px 60px #0004;
+    animation: reveal 0.25s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.modal-label {
+    color: var(--red);
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: 2px;
+}
+
+.modal-card h2 {
+    padding-right: 15px;
+    font: 700 32px 'Playfair Display', Georgia, serif;
+}
+
+.modal-divider {
+    width: 55px;
+    height: 3px;
+    margin: 18px 0;
+    background: var(--green);
+}
+
+.modal-card #modalText {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.modal-number {
+    display: block;
+    margin-top: 25px;
+    color: var(--green);
+    font: 11px 'DM Mono', monospace;
+}
+
+@keyframes reveal {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(12px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media (max-width: 480px) {
-    .poster {
-        padding: 20px;
+@media (max-width: 520px) {
+    body {
+        padding: 12px 8px;
     }
 
     .collage {
-        min-height: 300px;
+        height: 370px;
     }
 
-    .portrait {
-        height: 255px;
-        width: 60%;
+    .portrait-frame {
+        top: 40px;
+        width: 53%;
+        height: 270px;
     }
 
-    .note {
-        width: 112px;
-        padding: 8px;
+    .paper-note {
+        width: 78px;
+        padding: 8px 4px;
+        font-size: 8px;
     }
 
-    .symbol {
-        font-size: 32px;
+    .element {
+        font-size: 30px;
     }
 
-    .note button {
+    .click-point {
+        gap: 3px;
+    }
+
+    .click-point button {
+        width: 32px;
+        height: 32px;
         font-size: 10px;
     }
 
-    .note-one {
-        left: 5px;
+    .click-point span {
+        font-size: 7px;
+        letter-spacing: 0;
     }
 
-    .note-two {
-        right: 5px;
+    .point-1,
+    .point-3 {
+        left: 2%;
     }
 
-    .stamp {
-        width: 53px;
-        height: 53px;
-        font-size: 11px;
-        right: 8px;
-        top: 8px;
+    .point-2 {
+        left: 1%;
+    }
+
+    .point-4,
+    .point-6 {
+        right: 2%;
+    }
+
+    .point-5 {
+        right: 1%;
+    }
+
+    .quote {
+        padding: 15px;
+    }
+
+    .quote p {
+        font-size: 17px;
+    }
+
+    .modal-card {
+        padding: 28px 23px;
+    }
+
+    .modal-card h2 {
+        font-size: 27px;
     }
 }
 
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .poster {
+        box-shadow: none;
+        max-width: none;
+    }
+
+    .modal,
+    .instruction {
+        display: none !important;
+    }
+}
