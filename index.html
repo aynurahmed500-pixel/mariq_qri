@@ -1,92 +1,126 @@
 
 <!DOCTYPE html>
-<html lang="bg">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мария Кюри — жена, променила науката</title>
+    <title>Мария Кюри | Научен портрет</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <main class="poster">
-        <div class="top-line">
-            <span>НАУКА • ОТКРИТИЯ • ИСТОРИЯ</span>
-            <span>1867 — 1934</span>
-        </div>
+<main class="poster">
 
+    <header class="header">
+        <span>НАУКА / ИСТОРИЯ / ОТКРИТИЯ</span>
+        <span>1867 — 1934</span>
+    </header>
+
+    <section class="intro">
+        <p class="eyebrow">ЖЕНАТА ЗАД ОТКРИТИЯТА</p>
         <h1>МАРИЯ<br><span>КЮРИ</span></h1>
-
         <p class="subtitle">
-            Жената, която промени представите ни за материята.
+            Един живот, посветен на науката.
         </p>
+    </section>
 
-        <div class="collage">
-            <div class="portrait">
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c1920.jpg"
-                    alt="Портрет на Мария Кюри"
-                >
-            </div>
+    <section class="collage">
 
-            <div class="note note-one">
-                <span class="symbol">Po</span>
-                <p>Полоний</p>
-                <button data-fact="polonium">📄 Научи повече</button>
-            </div>
-
-            <div class="note note-two">
-                <span class="symbol">Ra</span>
-                <p>Радий</p>
-                <button data-fact="radium">📄 Научи повече</button>
-            </div>
-
-            <div class="stamp">2×<br>NOBEL</div>
+        <div class="paper-note note-left">
+            <span class="element">Po</span>
+            <span>ПОЛОНИЙ</span>
         </div>
 
-        <section class="quote">
-            <span class="quote-mark">“</span>
-            <p>
-                В живота няма от какво да се страхуваме,
-                има само неща, които трябва да разберем.
-            </p>
-            <small>— Мария Кюри</small>
-        </section>
-
-        <section class="timeline">
-            <h2>ПЪТЯТ НА ЕДИН УМ</h2>
-
-            <button class="year" data-fact="1903">
-                <strong>1903</strong>
-                <span>Нобелова награда по физика</span>
-                <b>＋</b>
-            </button>
-
-            <button class="year" data-fact="1911">
-                <strong>1911</strong>
-                <span>Нобелова награда по химия</span>
-                <b>＋</b>
-            </button>
-
-            <button class="year" data-fact="legacy">
-                <strong>1934</strong>
-                <span>Наследство, което продължава</span>
-                <b>＋</b>
-            </button>
-        </section>
-
-        <div class="fact-box" id="factBox" hidden>
-            <button id="closeFact" class="close" aria-label="Затвори">×</button>
-            <h3 id="factTitle"></h3>
-            <p id="factText"></p>
+        <div class="portrait-frame">
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c1920.jpg"
+                alt="Исторически портрет на Мария Кюри"
+            >
+            <span class="photo-caption">MARIE SKŁODOWSKA CURIE</span>
         </div>
 
-        <footer>
-            <span>ЛЮБОПИТСТВОТО ПРОМЕНЯ СВЕТА</span>
-            <span>01 / НАУЧЕН ПОРТРЕТ</span>
-        </footer>
-    </main>
+        <div class="paper-note note-right">
+            <span class="element">Ra</span>
+            <span>РАДИЙ</span>
+        </div>
 
-    <script src="index.js"></script>
+        <span class="orbit orbit-one">☼</span>
+        <span class="orbit orbit-two">✳</span>
+
+        <div class="click-point point-1">
+            <button data-topic="early" aria-label="Ранни години">01</button>
+            <span>НАЧАЛО</span>
+        </div>
+
+        <div class="click-point point-2">
+            <button data-topic="paris" aria-label="Образование в Париж">02</button>
+            <span>ПАРИЖ</span>
+        </div>
+
+        <div class="click-point point-3">
+            <button data-topic="discovery" aria-label="Научни открития">03</button>
+            <span>ОТКРИТИЯ</span>
+        </div>
+
+        <div class="click-point point-4">
+            <button data-topic="nobel" aria-label="Нобелови награди">04</button>
+            <span>НОБЕЛ</span>
+        </div>
+
+        <div class="click-point point-5">
+            <button data-topic="war" aria-label="Работа по време на войната">05</button>
+            <span>ВОЙНАТА</span>
+        </div>
+
+        <div class="click-point point-6">
+            <button data-topic="legacy" aria-label="Научно наследство">06</button>
+            <span>НАСЛЕДСТВО</span>
+        </div>
+
+    </section>
+
+    <section class="quote">
+        <span class="quote-symbol">“</span>
+        <p>
+            В живота няма от какво да се страхуваме,
+            има само неща, които трябва да разберем.
+        </p>
+        <small>— Приписван цитат на Мария Кюри</small>
+    </section>
+
+    <section class="instruction">
+        <span class="pulse"></span>
+        НАТИСНИ НОМЕР, ЗА ДА ОТКРИЕШ ИСТОРИЯТА
+    </section>
+
+    <footer>
+        <span>ЛЮБОПИТСТВОТО ПРОМЕНЯ СВЕТА</span>
+        <span>НАУЧЕН ПОРТРЕТ № 01</span>
+    </footer>
+
+</main>
+
+<div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+
+    <article
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+        <button class="modal-close" data-close aria-label="Затвори">
+            ×
+        </button>
+
+        <p class="modal-label" id="modalLabel">НАУЧЕН ПОРТРЕТ</p>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-divider"></div>
+        <p id="modalText"></p>
+        <span class="modal-number" id="modalNumber"></span>
+    </article>
+</div>
+
+<script src="index.js"></script>
 </body>
 </html>
