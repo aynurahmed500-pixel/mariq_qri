@@ -44,7 +44,7 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-    font: 10px 'DM Mono', monospace;
+    font: 14px 'DM Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -61,7 +61,7 @@ footer {
 
 .eyebrow {
     color: var(--red);
-    font: 11px 'DM Mono', monospace;
+    font: 14px 'DM Mono', monospace;
     letter-spacing: 2px;
 }
 
@@ -265,7 +265,7 @@ h1 span {
     align-items: center;
     gap: 10px;
     margin: 25px 0;
-    font: 10px 'DM Mono', monospace;
+    font: 14px 'DM Mono', monospace;
     letter-spacing: 1px;
 }
 
