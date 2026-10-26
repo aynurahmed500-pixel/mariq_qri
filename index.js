@@ -56,7 +56,7 @@ function openTopic(topic, button) {
     modalTitle.textContent = content.title;
     modalText.textContent = content.text;
     modalLabel.textContent = "МАРИЯ КЮРИ · БИОГРАФИЯ";
-    modalNumber.textContent = "НАУЧЕН ПОРТРЕТ № " +
+    modalNumber.textContent = " " +
         button.textContent.trim();
 
     // Листчето се позиционира спрямо самия плакат.
